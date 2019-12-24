@@ -1,0 +1,5 @@
+sudo: required
+services:
+  - docker
+script:
+  docker image build -f Dockerfile.dev -t brunokarpo/playing:dev .
