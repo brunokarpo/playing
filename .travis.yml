@@ -1,5 +1,9 @@
 sudo: required
 services:
   - docker
+env:
+  global:
+    - SHA=$(git rev-parse HEAD)
+
 script:
-  docker image build -f Dockerfile.dev -t brunokarpo/playing:dev .
+  - docker image build -f Dockerfile -t brunokarpo/playing:latest -t brunokarpo/playing:$SHA  .

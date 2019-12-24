@@ -1,4 +1,0 @@
-FROM openjdk:8-alpine as builder
-WORKDIR /home/maven/src
-COPY . .
-RUN ./mvnw clean package
