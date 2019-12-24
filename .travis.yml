@@ -5,5 +5,12 @@ env:
   global:
     - SHA=$(git rev-parse HEAD)
 
+before_install:
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+
 script:
   - docker image build -f Dockerfile -t brunokarpo/playing:latest -t brunokarpo/playing:$SHA  .
+
+after_success:
+  - docker push brunokarpo/playing:latest
+  - docker push brunokarpo/playing:$SHA
