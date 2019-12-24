@@ -14,3 +14,7 @@ spec:
             backend:
               serviceName: playing-application-cluster-ip
               servicePort: 8080
+          - path: /actuator/?(.*)
+            backend:
+              serviceName: playing-application-cluster-ip
+              servicePort: 8081
