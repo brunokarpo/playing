@@ -11,5 +11,8 @@ class PlayingApplicationTest {
 
     @Test
     fun loadContext() {
+        /*
+         * testing Spring load context
+         */
     }
 }
